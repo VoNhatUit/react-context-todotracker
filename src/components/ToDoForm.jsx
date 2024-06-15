@@ -12,12 +12,18 @@ export default function ToDoForm(){
         {
           key: "1",
           label: "All",
-          children: "",
+          children: (
+            <div>this is all</div>
+          )
         },
         {
           key: "2",
           label: "Completed",
-          children: "",
+          children: (
+            <>
+              this is completed
+            </>
+          )
         },
       ];
       const onChange = (e) => {
