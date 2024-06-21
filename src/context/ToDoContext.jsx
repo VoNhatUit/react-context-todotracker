@@ -20,6 +20,9 @@ export const ToDoProvider = ({ children }) => {
   
         })
       }
+    function handleDeleteAll(){
+        setToDos([]);
+      };
     return (
       <ToDoContext.Provider
         value={{

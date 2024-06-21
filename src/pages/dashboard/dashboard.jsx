@@ -24,12 +24,15 @@ function Dashboard() {
   };
 
   return (
-    <div>
-      <h1 className='text-[30px] font-bold container mx-auto'> Todo Tracker </h1>
-      <div className='container mx-auto'>
+    <>
+      <div className="w-8/12 mx-auto">
+      <h1 className='text-[30px] font-bold text-center'> Todo Tracker </h1>
+      <div >
         <Tabs defaultActiveKey="1" items={items} onChange={onChange} />
       </div>
-    </div>
+      </div>
+      
+    </>
   )
 }
 
