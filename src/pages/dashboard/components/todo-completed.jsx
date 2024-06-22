@@ -26,7 +26,10 @@ function TodoCompleted() {
   const debouncedValue = useDebounce(value, 1000);
   const { todos } = useAppContext();
   
-  const todosCompleted = todos.filter(todo => todo.completed).filter(todo => todo.title.includes(debouncedValue));
+  // const todosCompleted = todos.filter(todo => todo.completed).filter(todo => todo.title.includes(debouncedValue));
+  const todosCompleted = React.useMemo(() => {
+    return todos.filter(todo => todo.completed).filter(todo => todo.title.includes(debouncedValue))
+  }, [todos, debouncedValue])
 
   return (
     <>
