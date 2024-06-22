@@ -24,7 +24,7 @@ const useDebounce = (value, delay = 500) => {
 function TodoCompleted() {
   const [value, setValue] = React.useState('');
   const debouncedValue = useDebounce(value, 1000);
-  const { todos } = useAppContext();
+  const { todos, handleDeleteCompleted } = useAppContext();
   
   // const todosCompleted = todos.filter(todo => todo.completed).filter(todo => todo.title.includes(debouncedValue));
   const todosCompleted = React.useMemo(() => {
@@ -46,7 +46,7 @@ function TodoCompleted() {
               {todo.title}
             </Typography>
             <Tooltip title="Delete">
-              <Button shape="circle" danger icon={<DeleteOutlined />} />
+              <Button shape="circle" danger icon={<DeleteOutlined />} onClick={()=> handleDeleteCompleted(todo.id)}/>
             </Tooltip>
           </div>
         ))}

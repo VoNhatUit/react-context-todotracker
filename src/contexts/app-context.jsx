@@ -13,7 +13,17 @@ export default function AppProvider({ children }) {
     }
     setTodos(prevState => [...prevState, todoItem])
   }
+  function handleDeleteAll(){
+    console.log('delete all')
+    setTodos([]);
+  }
+  function handleDeleteCompleted(todoId){
+    setTodos(prevState => {
+      const newTodo = prevState.filter(todo => todo.id !== todoId)
+      return newTodo
 
+    })
+  }
   function handleCompletedTodo(todoId, checked){
     const todoIndex = todos.findIndex(todo => todo.id === todoId);
     if(todoIndex === -1) return;
@@ -27,7 +37,9 @@ export default function AppProvider({ children }) {
       value={{
         todos,
         addTodo,
-        handleCompletedTodo
+        handleCompletedTodo,
+        handleDeleteCompleted,
+        handleDeleteAll
       }}
     >
       {children}

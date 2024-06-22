@@ -3,7 +3,7 @@ import { Button, Input, Checkbox, Empty, Form } from 'antd';
 import { useAppContext } from '../../../contexts/app-context';
 
 function TodoAll() {
-  const { todos, addTodo, handleCompletedTodo } = useAppContext();
+  const { todos, addTodo, handleCompletedTodo, handleDeleteAll } = useAppContext();
   const [form] = Form.useForm();
 
   const onFinish = (values) => {
@@ -56,7 +56,7 @@ function TodoAll() {
       )}
      
       <div className='text-right'>
-        <Button danger type="primary">
+        <Button danger type="primary" onClick={ handleDeleteAll}>
           Delete
         </Button>
       </div>
