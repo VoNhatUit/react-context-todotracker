@@ -19,9 +19,13 @@ export default function AppProvider({ children }) {
   }
   function handleDeleteCompleted(todoId){
     setTodos(prevState => {
-      const newTodo = prevState.filter(todo => todo.id !== todoId)
-      return newTodo
+      const todoIndex = prevState.findIndex(todo => todo.id === todoId);
 
+      if(todoIndex === -1) return prevState;
+
+      const newTodos = [...prevState];
+      newTodos[todoIndex].completed = false;
+      return newTodos
     })
   }
   function handleCompletedTodo(todoId, checked){

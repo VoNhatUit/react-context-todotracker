@@ -46,6 +46,7 @@ function TodoAll() {
               key={todo.id} 
               onChange={(event) => handleCompletedTodo(todo.id, event.target.checked)}
               disabled={todo.completed}
+              checked={todo.completed}
             >
                 {todo.title}
             </Checkbox>
