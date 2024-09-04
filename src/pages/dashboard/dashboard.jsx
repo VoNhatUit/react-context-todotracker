@@ -1,4 +1,3 @@
-import React from 'react'
 import { Tabs } from 'antd';
 
 // components
@@ -24,15 +23,15 @@ function Dashboard() {
   };
 
   return (
-    <>
-      <div className="w-8/12 mx-auto">
+    
+      <div className="w-8/12 mx-auto" >
       <h1 className='text-[30px] font-bold text-center'> Todo Tracker </h1>
       <div >
         <Tabs defaultActiveKey="1" items={items} onChange={onChange} />
       </div>
       </div>
       
-    </>
+    
   )
 }
 
